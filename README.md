@@ -1,30 +1,77 @@
-# React + TypeScript + Vite
+# Vimipi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+>En este Proyecto se creara una App de **almacenamiento de archivo en la nube**
 
-Currently, two official plugins are available:
+## Objetivos
+ > Se creara el **Back-end** y el **Front-end** para desarrollar dicha App, la cual subira, listara los archivos y permitira descargarlos, se  hara mediante TDD
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ 
+## FRONT-END 
+### Se realizara con:
 
-## Expanding the ESLint configuration
+- **Javascript** - `Lenguaje de programacion para crear paginas web interactivas`
+- **Typescript** - `Da tipado estatico a javascript`
+- **Vite** - `Herramienta de construccion de frontend`
+- **Vitest** - `Framework nativo de vite para construir TEST`
+- **React** - `Crear interfaces de usuarios`
+- **TailwindCSS** - `Framework para CSS`
+- **Formik** - `Libreria declarativa para manejar validacion de formularios`
+- **Yup** - `Esquemas que permiten validaciones complejas`
+- **Zustand** - `Manejador de estado global - Mucho mas Facil que ***Redux-Toolkit***`
+- **Ts-Standard** - `Reglas para formatear el codigo`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## BACK-END 
+### Se realizara con:
 
-- Configure the top-level `parserOptions` property like this:
+- **Javascript** - `Lenguaje de programacion para crear paginas web interactivas`
+- **Typescript** - `Da tipado estatico a javascript`
+- **Express** - `Framework que permite desarrollar un servidor web`
+- **Sequelize** - `ORM para modelar base de datos, en este caso con Postgres`
+- **Postgres** - `Gestor de DB relacionales`
+- **MVC** - `Arquitectura de software para separar codigo por responsabilidades`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Definiendo Rutas
+
+ - **/upload** - `Para subir los archivos`
+ - **/files** - `Trae todos los archivos`
+ 
+#### Definiendo la DB
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        width: 10%;
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+
+  <table>
+    <tr>
+      <th >Files</th>
+    </tr>
+    <tr>
+      <td>* ID</td>
+    </tr>
+    <tr>
+      <td>name</td>
+    </tr>
+    <tr>
+      <td>type</td>
+    </tr>
+    <tr>
+      <td>size</td>
+    </tr>
+  </table>
+  </body>
+</html>
