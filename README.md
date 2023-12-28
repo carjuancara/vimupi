@@ -24,7 +24,6 @@
 ### Se realizara con:
 
 - **Javascript** - `Lenguaje de programacion para crear paginas web interactivas`
-- **Typescript** - `Da tipado estatico a javascript`
 - **Express** - `Framework que permite desarrollar un servidor web`
 - **Sequelize** - `ORM para modelar base de datos, en este caso con Postgres`
 - **Postgres** - `Gestor de DB relacionales`
