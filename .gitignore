@@ -11,7 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
-
+# ayuda para etiquetar commits
+commits-eng.json
+commits-esp.json
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
