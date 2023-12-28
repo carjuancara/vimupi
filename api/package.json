@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "api para subir y descargar archivos",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "carjuancara",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3",
+    "sequelize": "^6.35.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0",
+    "morgan": "^1.10.0"
+  }
+}
