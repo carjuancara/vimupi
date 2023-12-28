@@ -27,6 +27,7 @@
 - **Express** - `Framework que permite desarrollar un servidor web`
 - **Sequelize** - `ORM para modelar base de datos, en este caso con Postgres`
 - **Postgres** - `Gestor de DB relacionales`
+- **Jest** - `Framework para realizar los test`
 - **MVC** - `Arquitectura de software para separar codigo por responsabilidades`
 
 
