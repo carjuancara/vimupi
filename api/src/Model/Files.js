@@ -5,18 +5,19 @@ module.exports = (sequelize) => {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    type:{
-      type:DataTypes.STRING,
-      allowNull:false
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    size:{
-      type: DataTypes.INTEGER
+    size: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   })
 }
