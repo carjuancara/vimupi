@@ -1,38 +1,11 @@
 const express = require('express')
-const fs = require('fs')
-const path = require('path')
-const { upload } = require('./functions')
+
+const uploadRoutes = require('./Routes/uploadRoutes')
+const downloadRoutes = require('./Routes/downloadRoutes')
 const server = express()
 
-// Manejador de la ruta que utiliza Multer para cargar archivos
-server.post('/upload', upload.single('archivo'), (req, res) => {
-  res.status(200).json({ message: 'Archivo recibido correctamente' })
-})
-
-server.get('/download', (req, res) => {
-  const directoryPath = path.resolve(__dirname, '../Test/download')
-  fs.readdir(directoryPath, (err, files) => {
-    if (err) {
-      console.error('Error al leer el directorio:', err)
-      return res.status(500).send('Error interno del servidor')
-    }
-
-    const fileList = files.map(file => {
-      const filePath = path.join(directoryPath, file)
-      const stat = fs.statSync(filePath)
-
-      // Leer el contenido del archivo
-      const fileContent = fs.readFileSync(filePath)
-
-      return {
-        filename: file,
-        content: fileContent, // Cambiado de 'path' a 'content'
-        size: stat.size
-      }
-    })
-    res.json(fileList.length > 0 ? fileList : [])
-  })
-})
+server.use('/upload', uploadRoutes)
+server.use('/download', downloadRoutes)
 
 server.use((err, req, res, next) => {
   if (err.code === 'LIMIT_FILE_SIZE') {
