@@ -8,6 +8,7 @@
     "test:db": "jest --testPathPattern=DB.test.js",
     "test:server": "jest --testPathPattern = Server.test.js",
     "test:routes": "jest --testPathPattern = Routes.test.js",
+    "test:coverage": "jest --coverage",
     "start": "nodemon -L"
   },
   "keywords": [],
