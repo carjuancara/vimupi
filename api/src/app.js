@@ -35,15 +35,11 @@ const upload = multer({
 
 // Manejador de la ruta que utiliza Multer para cargar archivos
 server.post('/upload', upload.single('archivo'), (req, res) => {
-  console.log('Solicitud de carga de archivo recibida')
-  console.log('Cuerpo de la solicitud:', req.body)
-  console.log('Archivo:', req.file)
-  // Lógica después de cargar el archivo
   res.status(200).json({ message: 'Archivo recibido correctamente' })
 })
 
 server.get('/download', (req, res) => {
-  const directoryPath = path.resolve(__dirname, '../Test/download') // Reemplaza con la ruta de tu directorio
+  const directoryPath = path.resolve(__dirname, '../Test/download')
   fs.readdir(directoryPath, (err, files) => {
     if (err) {
       console.error('Error al leer el directorio:', err)
@@ -67,11 +63,6 @@ server.get('/download', (req, res) => {
   })
 })
 
-/* server.use((err, req, res) => {
-  console.error('Error no manejado:', err)
-  res.status(500).json({ error: 'Internal Server Error' })
-}) */
-
 server.use((err, req, res, next) => {
   if (err.code === 'LIMIT_FILE_SIZE') {
     return res.status(400).json({ error: 'La imagen no puede superar los 100KB' })
@@ -84,7 +75,7 @@ server.use((err, req, res, next) => {
 
   console.error('Error no manejado:', err)
 
-  // Si el flujo de respuesta aún no se ha cerrado, ciérralo antes de pasar al siguiente middleware
+  // Si el flujo de respuesta aún no se ha cerrado, lo ciérro antes de pasar al siguiente middleware
   if (!res.headersSent) {
     res.status(500).json({ error: 'Internal Server Error' })
   }
